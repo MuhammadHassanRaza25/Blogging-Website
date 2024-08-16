@@ -1,0 +1,107 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.Formcontainer {
+    width: 30%;
+    height: 75vh;
+    padding: 25px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 29px 0px;
+}
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+h2 {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-size: 35px;
+    text-align: center;
+    color: #333;
+}
+
+/* all inputs styling start */
+.input input {
+    width: 100%;
+    margin-bottom: 5%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in;
+}
+.input input:focus {
+    border-color: #E10489;
+    outline: none;
+    box-shadow: 0px 0px 3px #E10489;
+}
+.input input:focus::placeholder{
+    color: #E10489;
+}
+/* all inputs styling end */
+
+/* all buttons styling start */
+.btn {
+    margin-top: 4%;
+    background: linear-gradient(100deg, #fd6265 0%, #E10489 70%);
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.btn:hover {
+    background: linear-gradient(90deg, #E10489 0%,#fd6265 70%);
+    transition: all 0.5s;
+}
+/* all buttons styling end */
+
+/* text with link start */
+p {
+    margin-top: 8%;
+    text-align: center;
+}
+p a {
+    color: #E10489;
+    text-decoration: none;
+    font-weight: bold;
+}
+p a:hover {
+    text-decoration: underline;
+}
+/* text with link end */
+
+/* Responsiveness Start */
+@media(max-width:1024px){
+    .Formcontainer {
+        width: 50%;
+        height: 80vh;
+    }
+}
+@media(max-width:600px){
+    .Formcontainer {
+        width: 90%;
+        height: 80vh;
+    }
+}
+@media(max-width:430px){
+    h2 {
+        margin-top: 13%;
+        margin-bottom: 20% !important;
+    }
+    p {
+        margin-top: 13%;
+    }
+}
+/* Responsiveness End */

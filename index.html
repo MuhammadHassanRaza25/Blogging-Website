@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging Website - Login/Signup</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="Files/style.css">
+</head>
+<body>
+    <!-- templete link -->
+    <!-- https://preview.themeforest.net/item/wavy-modern-lightweight-blog-for-ghost/full_screen_preview/48834605?_ga=2.121813516.627943926.1723805848-1155241185.1723407014&_gac=1.255460858.1723810651.CjwKCAjw8fu1BhBsEiwAwDrsjMsJMUj11WMmdynuK2P79oKrsDkqkvHs9cbz7Q_aAj_CSEbMKVI1oRoC4dQQAvD_BwE -->
+
+    <!-- Login & Signup Form Start -->
+    <div class="Formcontainer">
+        <div class="form-wrapper">
+            <!-- Login Form -->
+            <div class="form" id="loginForm">
+                <h2 style="margin-bottom: 15%; font-size: 40px;">Login</h2>
+                <form>
+                    <div class="input">
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input">
+                        <input type="password" id="loginPass" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn" id="loginBtn">Login</button>
+                    <p>Don't have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="form" id="signupForm" style="display:none;">
+                <h2>Sign Up</h2>
+                <form>
+                    <div class="input">
+                        <input type="text" id="signupName" placeholder="Name" required>
+                    </div>
+                    <div class="input">
+                        <input type="email" id="signupEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input">
+                        <input type="password" id="signupPass" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn" id="signupBtn">Sign Up</button>
+                    <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Login & Signup Form End -->
+
+
+    <script>
+        document.getElementById('switchToSignup').addEventListener('click', function(event) {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+        });
+
+        document.getElementById('switchToLogin').addEventListener('click', function(event) {
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        });
+    </script>
+
+    <script src="Files/app.js" type="module"></script>
+</body>
+</html>
