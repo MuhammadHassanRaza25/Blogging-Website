@@ -18,3 +18,23 @@ const firebaseConfig = {
     app,
     auth
  }
+
+ 
+// firestore start
+ import { getFirestore } from  "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+ import {collection, addDoc, getDocs, doc, updateDoc, deleteDoc, onSnapshot} from  "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+ 
+ const db = getFirestore(app);
+
+ export{
+   app,
+   db,
+   getFirestore,
+   collection, 
+   addDoc, 
+   getDocs, 
+   doc, 
+   updateDoc, 
+   deleteDoc, 
+   onSnapshot
+ }
