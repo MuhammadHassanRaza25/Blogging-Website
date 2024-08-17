@@ -67,7 +67,7 @@ body{
  }
  /* select category styling end */
  /* logout button styling start */
- .loginBtn{
+ .loginSignBtn{
      margin-top: 4%;
      background: linear-gradient(100deg, #fd6265 0%, #E10489 70%);
      width: 130px;
@@ -80,7 +80,7 @@ body{
      cursor: pointer;
      transition: all 0.5s;
  }
- .loginBtn:hover{
+ .loginSignBtn:hover{
      box-shadow: 0px 0px 4px #E10489;
      transition: all 0.5s;
  }
@@ -106,7 +106,7 @@ body{
      text-align: center;
      font-weight: bolder;
  }
- .addpostBtn{
+ .createpostBtn{
      margin-top: 4%;
      background: linear-gradient(100deg, #fd6265 0%, #E10489 70%);
      width: 130px;
@@ -120,7 +120,7 @@ body{
      transition: all 0.5s;
      margin-top: 0%;
  }
- .addpostBtn:hover{
+ .createpostBtn:hover{
      box-shadow: 0px 0px 4px #E10489;
      transition: all 0.5s;
  }
@@ -210,7 +210,6 @@ body{
     background-color: rgb(26, 4, 48);
     color: white;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     padding: 13px;
@@ -330,3 +329,51 @@ body{
  }
  /* post now button end */
  /* Add page styling post end */
+
+ /* Responsiveness Start */
+ @media(max-width:800px){
+    .introTextDiv h1{
+        font-size: 20px;
+    }
+    .createpostBtn{
+        width: 130px;
+        padding: 7px;
+        font-size: 15px;
+    }
+    .loginSignBtn{
+        width: 130px;
+        padding: 7px;
+        font-size: 15px;
+    }
+    #selectCategory{
+        padding: 7px;
+        font-size: 15px;
+     }
+    .rocket{
+        width: 30px;
+    }
+    .earth{
+        width: 50px;
+    }
+    .footerDiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        height: 75vh;
+    }
+    .abUs h2{
+        text-align: center;
+    }
+ }
+ @media(max-width:500px){
+    .addpostDiv{
+        width: 90%;
+    }
+ }
+ @media(max-width:430px){
+    .introTextDiv h1{
+        font-size: 16px;
+    }
+ }
+ /* Responsiveness End */
