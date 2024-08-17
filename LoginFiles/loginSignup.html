@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging Website - Login/Signup</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="loginSignup.css">
+</head>
+<body>
+    <!-- Login & Signup Form Start -->
+    <div class="Formcontainer">
+        <div class="form-wrapper">
+            <!-- Login Form -->
+            <div class="form" id="loginForm">
+                <h2 style="margin-bottom: 15%; font-size: 40px;">Login</h2>
+                <form>
+                    <div class="input">
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input">
+                        <input type="password" id="loginPass" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn" id="loginBtn">Login</button>
+                    <p>Don't have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="form" id="signupForm" style="display:none;">
+                <h2>Sign Up</h2>
+                <form>
+                    <div class="input">
+                        <input type="text" id="signupName" placeholder="Name" required>
+                    </div>
+                    <div class="input">
+                        <input type="email" id="signupEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input">
+                        <input type="password" id="signupPass" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn" id="signupBtn">Sign Up</button>
+                    <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Login & Signup Form End -->
+
+
+    <script>
+        document.getElementById('switchToSignup').addEventListener('click', function(event) {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+        });
+
+        document.getElementById('switchToLogin').addEventListener('click', function(event) {
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        });
+    </script>
+
+    <script src="loginSignup.js" type="module"></script>
+</body>
+</html>

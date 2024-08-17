@@ -3,18 +3,16 @@ import { signOut } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-aut
 import { auth } from "../Firebase/firebase.mjs"
 
 
-
 //dashbaord page varibales
 let searchInput = document.getElementById('searchInput')
 let searchBtn = document.getElementById('searchBtn')
 let titleInp = document.getElementById('titleInp')
 let discInp = document.getElementById('discInp')
 let nameInp = document.getElementById('nameInp')
-let showPosts = document.getElementById('showPosts')
 // let chooseFile = document.getElementById('chooseFile')
 
 // Logout User Start
-// let signoutBtn = document.getElementById('signoutBtn')
+// let loginSignBtn = document.getElementById('loginSignBtn')
 // signoutBtn.addEventListener('click',()=>{
 // signOut(auth).then(() => {
 //     // Sign-out successful.
@@ -27,10 +25,10 @@ let showPosts = document.getElementById('showPosts')
 // })
 // Logout User End
 
-// post details Start
+// set post details in Database Start
 let postnowBtn = document.querySelector('#postnowBtn')
-postnowBtn.addEventListener('click',async ()=>{
-    try {
+postnowBtn?.addEventListener('click', async ()=>{
+     try {
         const docRef = await addDoc(collection(db, "allPosts"), {
           title: titleInp.value,
           discription: discInp.value,
@@ -40,11 +38,47 @@ postnowBtn.addEventListener('click',async ()=>{
       } catch (e) {
         console.error("Error adding document: ", e);
     }
-      console.log('Running !');
+    console.log('Running !');
+
+    titleInp.value = ''
+    discInp.value = ''
+    nameInp.value = ''
 })
+// set post details in Database End
 
-// post details End
+// get Data & show post Start
+let showPosts = document.getElementById('showPosts')
+let getBlogData = async ()=>{
+  onSnapshot(collection(db, "allPosts"), (snapshot)=>{
 
-// show post Start
+  showPosts.innerHTML = ''
+  snapshot.forEach((doc)=>{
+    // console.log("DATA ==>",doc.id, doc.data()); 
+    // console.log(`${title}`,`${discription}`,`${name}`);
+   let {title,discription,name} = doc.data()
+   showPosts.innerHTML += `
+   <div class="postDiv">
+            <div class="imgDiv">
+               <img src="" alt="image">
+           </div>
+ 
+           <div class="titleDiv">
+             <h3>${title}</h3>
+           </div>
+ 
+            <div class="discDiv">
+             <p>${discription}</p>
+            </div>
+ 
+            <div class="authorDiv">
+             <h3><span style="color: rgb(59, 15, 102);">Post By:</span> ${name}</h3>
+            </div>
+         </div>
+   `
+  })
 
-// show post End
+  })
+}
+getBlogData()
+
+// get Data & show post End

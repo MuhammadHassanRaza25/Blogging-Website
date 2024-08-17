@@ -8,7 +8,7 @@ let signupName = document.getElementById('signupName')
 let signupEmail = document.getElementById('signupEmail')
 let signupPass = document.getElementById('signupPass')
 let signupBtn = document.getElementById('signupBtn')
-
+let loginSignBtn = document.getElementById('loginSignBtn')
 // //dashbaord page varibales
 // let searchInput = document.getElementById('searchInput')
 // let searchBtn = document.getElementById('searchBtn')
@@ -16,7 +16,7 @@ let signupBtn = document.getElementById('signupBtn')
 
 
 // Signup New User Start
-signupBtn.addEventListener('click',()=>{
+signupBtn?.addEventListener('click',()=>{
     createUserWithEmailAndPassword(auth, signupEmail.value, signupPass.value)
   .then((userCredential) => {
     // Signed up 
@@ -27,9 +27,6 @@ signupBtn.addEventListener('click',()=>{
         text: "SignUp Successfully!",
         icon: "success"
       });
-    //   signupName.value = ''
-    //   signupEmail.value = ''
-    //   signupPass.value = ''
     // ...
   })
   .catch((error) => {
@@ -74,12 +71,13 @@ signupBtn.addEventListener('click',()=>{
 // Signup New User End
 
 // Login User Start
-loginBtn.addEventListener('click',()=>{
+loginBtn?.addEventListener('click',()=>{
     signInWithEmailAndPassword(auth, loginEmail.value, loginPass.value)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    window.location.href = 'Dashboard/dashboard.html'
+    window.location.href = '../index.html'
+    // loginSignBtn.innerHTML = 'Logout'
     // ...
   })
   .catch((error) => {
@@ -115,16 +113,17 @@ loginBtn.addEventListener('click',()=>{
 // Login User End
 
 // Signout User Start
-// signoutBtn.addEventListener('click',()=>{
+// loginSignBtn.addEventListener('click',()=>{
 //   console.log('asfasd');
   
-// // signOut(auth).then(() => {
-// //   // Sign-out successful.
-// //   console.log('Sign-out successful');
-// //   window.location.href = '../index.html'
-// // }).catch((error) => {
-// //   // An error happened.
-// //   console.log('error');
-// // });
+// signOut(auth).then(() => {
+//   // Sign-out successful.
+//   console.log('Sign-out successful');
+//   // window.location.href = '../LoginFiles/loginSignup.html'
+//   // alert('logout')
+// }).catch((error) => {
+//   // An error happened.
+//   console.log('error');
+// });
 // })
 // Signout User End
