@@ -1,15 +1,130 @@
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import { auth } from "../Firebase/firebase.mjs"
 
-// let loginEmail = document.getElementById('loginEmail')
-// let loginPass = document.getElementById('loginPass')
-// let loginBtn = document.getElementById('loginBtn')
-// let signupName = document.getElementById('signupName')
-// let signupEmail = document.getElementById('signupEmail')
-// let signupPass = document.getElementById('signupPass')
-// let signupBtn = document.getElementById('signupBtn')
+let loginEmail = document.getElementById('loginEmail')
+let loginPass = document.getElementById('loginPass')
+let loginBtn = document.getElementById('loginBtn')
+let signupName = document.getElementById('signupName')
+let signupEmail = document.getElementById('signupEmail')
+let signupPass = document.getElementById('signupPass')
+let signupBtn = document.getElementById('signupBtn')
 
-//dashbaord page varibales
-let searchInput = document.getElementById('searchInput')
-let searchBtn = document.getElementById('searchBtn')
-let signoutBtn = document.getElementById('signoutBtn')
+// //dashbaord page varibales
+// let searchInput = document.getElementById('searchInput')
+// let searchBtn = document.getElementById('searchBtn')
+// let signoutBtn = document.getElementById('signoutBtn')
+
+
+// Signup New User Start
+signupBtn.addEventListener('click',()=>{
+    createUserWithEmailAndPassword(auth, signupEmail.value, signupPass.value)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    console.log(user);
+    Swal.fire({
+        title: "Good job!",
+        text: "SignUp Successfully!",
+        icon: "success"
+      });
+    //   signupName.value = ''
+    //   signupEmail.value = ''
+    //   signupPass.value = ''
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode);     //errorCode kuch errors firebase ki taraf se ate hain jo user ko dikhte hain. un errors pe if/else lagai hai.
+    if(errorCode == 'auth/email-already-in-use'){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "This Email Is Already In Use!",
+          });
+    }
+    else if(errorCode == 'auth/weak-password'){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Your password must be atleast 6 characters",
+          });
+    }
+    else if(errorCode == 'auth/invalid-email'){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Invalid Email",
+          });
+    }
+    else if(errorCode == 'auth/missing-password'){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Password is missing!",
+          });
+    }
+    //   signupName.value = ''
+    //   signupEmail.value = ''
+    //   signupPass.value = ''
+    
+    // ..
+  });
+})
+// Signup New User End
+
+// Login User Start
+loginBtn.addEventListener('click',()=>{
+    signInWithEmailAndPassword(auth, loginEmail.value, loginPass.value)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    window.location.href = 'Dashboard/dashboard.html'
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode);
+    if (errorCode == 'auth/missing-password') {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Password is missing!",
+        });
+    }
+    else if (errorCode == 'auth/invalid-email') {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Invalid Email",
+          });
+    }
+    else if (errorCode == 'auth/invalid-credential') {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Incorrect Password",
+        });
+    }
+    
+    // loginEmail.value = ''
+    // loginPass.value = ''
+  });
+})
+// Login User End
+
+// Signout User Start
+// signoutBtn.addEventListener('click',()=>{
+//   console.log('asfasd');
+  
+// // signOut(auth).then(() => {
+// //   // Sign-out successful.
+// //   console.log('Sign-out successful');
+// //   window.location.href = '../index.html'
+// // }).catch((error) => {
+// //   // An error happened.
+// //   console.log('error');
+// // });
+// })
+// Signout User End

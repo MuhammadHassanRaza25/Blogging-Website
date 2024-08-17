@@ -224,7 +224,7 @@ body{
     border-radius: 10px;
     padding: 10px;
     width: 50%;
-    height: 80vh;
+    height: 85vh;
 }
 .postHeading{
     text-align: center;
@@ -257,8 +257,27 @@ body{
 .postInpDiv input:focus::placeholder{
     color: #E10489;
 }
-.postnowBtn{
+/* choose file start */
+#chooseFile{
     margin-top: 4%;
+    background: linear-gradient(100deg, #fd6265 0%, #E10489 70%);
+    width: 90%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+#chooseFile:hover{
+    background: linear-gradient(90deg, #E10489 0%,#fd6265 70%);
+    transition: all 0.5s
+}
+/* choose file end */
+/* post now button start */
+.postnowBtn{
+    margin-top: 3%;
     background: linear-gradient(100deg, #fd6265 0%, #E10489 70%);
     width: 90%;
     padding: 15px;
@@ -273,4 +292,5 @@ body{
     background: linear-gradient(90deg, #E10489 0%,#fd6265 70%);
     transition: all 0.5s;
 }
+/* post now button end */
 /* Add page styling post end */
