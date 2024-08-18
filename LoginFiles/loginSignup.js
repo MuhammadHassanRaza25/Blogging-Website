@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import { auth } from "../Firebase/firebase.mjs"
 
 let loginEmail = document.getElementById('loginEmail')
@@ -8,11 +8,6 @@ let signupName = document.getElementById('signupName')
 let signupEmail = document.getElementById('signupEmail')
 let signupPass = document.getElementById('signupPass')
 let signupBtn = document.getElementById('signupBtn')
-let loginSignBtn = document.getElementById('loginSignBtn')
-// //dashbaord page varibales
-// let searchInput = document.getElementById('searchInput')
-// let searchBtn = document.getElementById('searchBtn')
-// let signoutBtn = document.getElementById('signoutBtn')
 
 
 // Signup New User Start
@@ -70,6 +65,7 @@ signupBtn?.addEventListener('click',()=>{
 })
 // Signup New User End
 
+
 // Login User Start
 loginBtn?.addEventListener('click',()=>{
     signInWithEmailAndPassword(auth, loginEmail.value, loginPass.value)
@@ -77,7 +73,6 @@ loginBtn?.addEventListener('click',()=>{
     // Signed in 
     const user = userCredential.user;
     window.location.href = '../index.html'
-    // loginSignBtn.innerHTML = 'Logout'
     // ...
   })
   .catch((error) => {
@@ -113,9 +108,8 @@ loginBtn?.addEventListener('click',()=>{
 // Login User End
 
 // Signout User Start
-// loginSignBtn.addEventListener('click',()=>{
-//   console.log('asfasd');
-  
+// logoutBtn?.addEventListener('click',()=>{
+// alert('Logout Successfully! ✅')
 // signOut(auth).then(() => {
 //   // Sign-out successful.
 //   console.log('Sign-out successful');

@@ -67,7 +67,7 @@ body{
  }
  /* select category styling end */
  /* logout button styling start */
- .loginSignBtn{
+ .loginBtn{
      margin-top: 4%;
      background: linear-gradient(100deg, #fd6265 0%, #E10489 70%);
      width: 130px;
@@ -80,10 +80,27 @@ body{
      cursor: pointer;
      transition: all 0.5s;
  }
- .loginSignBtn:hover{
+ .loginBtn:hover{
      box-shadow: 0px 0px 4px #E10489;
      transition: all 0.5s;
  }
+ .loginLoutBtn{
+    margin-top: 4%;
+    background: linear-gradient(100deg, #fd6265 0%, #E10489 70%);
+    width: 130px;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.loginLoutBtn:hover{
+    box-shadow: 0px 0px 4px #E10489;
+    transition: all 0.5s;
+}
  /* logout button styling end */
  /* Navbar End */
  
@@ -142,7 +159,7 @@ body{
  /* parent of post details */
  .postDiv{
      width: 420px;
-     height: 88vh;
+     height: 92vh;
      padding: 10px;
      margin-top: 4%;
  }
@@ -259,7 +276,7 @@ body{
      border-radius: 10px;
      padding: 10px;
      width: 50%;
-     height: 85vh;
+     height: 90vh;
  }
  .postHeading{
      text-align: center;
@@ -292,12 +309,42 @@ body{
  .postInpDiv input:focus::placeholder{
      color: #E10489;
  }
+ /* select Category 2nd button start */
+ #selectCategory2{
+    margin-top: 4%;
+    width: 90%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(100deg, #fd6265 0%, #E10489 70%);
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+ }
+ #selectCategory2 option{
+    background-color: #E10489;
+    color: white;
+    font-weight: bold;
+ }
+ #selectCategory2:focus{
+     box-shadow: 0px 0px 3px #E10489;
+     border-color: #E10489;
+     outline: none;
+     transition: all 0.5s;
+ }
+ #selectCategor2:hover{
+     box-shadow: 0px 0px 4px #E10489;
+     transition: all 0.5s;
+ }
+ /* select Category 2nd button end */
  /* choose file start */
  #chooseFile{
-     margin-top: 4%;
+     margin-top: 1%;
      background: linear-gradient(100deg, #fd6265 0%, #E10489 70%);
      width: 90%;
-     padding: 15px;
+     padding: 13px;
      border: none;
      border-radius: 8px;
      color: #fff;
@@ -312,10 +359,10 @@ body{
  /* choose file end */
  /* post now button start */
  .postnowBtn{
-     margin-top: 3%;
+     margin-top: 1%;
      background: linear-gradient(100deg, #fd6265 0%, #E10489 70%);
      width: 90%;
-     padding: 15px;
+     padding: 13px;
      border: none;
      border-radius: 8px;
      color: #fff;
