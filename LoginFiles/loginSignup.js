@@ -22,6 +22,9 @@ signupBtn?.addEventListener('click',()=>{
         text: "SignUp Successfully!",
         icon: "success"
       });
+      signupName.value = ''
+      signupEmail.value = ''
+      signupPass.value = ''
     // ...
   })
   .catch((error) => {
@@ -56,10 +59,6 @@ signupBtn?.addEventListener('click',()=>{
             text: "Password is missing!",
           });
     }
-    //   signupName.value = ''
-    //   signupEmail.value = ''
-    //   signupPass.value = ''
-    
     // ..
   });
 })
@@ -100,24 +99,6 @@ loginBtn?.addEventListener('click',()=>{
             text: "Incorrect Password",
         });
     }
-    
-    // loginEmail.value = ''
-    // loginPass.value = ''
   });
 })
 // Login User End
-
-// Signout User Start
-// logoutBtn?.addEventListener('click',()=>{
-// alert('Logout Successfully! ✅')
-// signOut(auth).then(() => {
-//   // Sign-out successful.
-//   console.log('Sign-out successful');
-//   // window.location.href = '../LoginFiles/loginSignup.html'
-//   // alert('logout')
-// }).catch((error) => {
-//   // An error happened.
-//   console.log('error');
-// });
-// })
-// Signout User End

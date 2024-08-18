@@ -8,21 +8,26 @@ let nameInp = document.getElementById('nameInp')
 let selectCategory2 = document.getElementById('selectCategory2')  // ye add post wala hai.
 let selectCategory = document.getElementById('selectCategory')    // ye dashboard page wala hai.
 
-let loginLoutBtn = document.getElementById('loginLoutBtn')
-onAuthStateChanged(auth, (user) => {
+let loginLoutBtn = document.getElementById('loginLoutBtn') // login & logout button. innertext changes in one button.
+onAuthStateChanged(auth, (user) => {  // is function se button ka text change or button none display ho rha hai.
   if (user) {
     const uid = user.uid;
     loginLoutBtn.innerHTML = 'Logout'
     console.log(uid);
     // ...
-  } else {
+  } 
+  else {
     // User is signed out
     // ...
+    createPostBtn.style.display = 'none'
   }
 });
+// logout user start
 loginLoutBtn?.addEventListener('click',()=>{
   if(loginLoutBtn.innerHTML = 'Logout'){
     console.log('Logout Successfully! ✅')
+
+    // Signout User Start
     signOut(auth).then(() => {
       // Sign-out successful.
       console.log('Sign-out successful');
@@ -30,8 +35,17 @@ loginLoutBtn?.addEventListener('click',()=>{
       // An error happened.
       console.log('error');
     });
+    // Signout User End
 }
 })
+// logout user end
+
+//create post button Start
+let createPostBtn = document.getElementById('createPostBtn')
+createPostBtn?.addEventListener('click',()=>{  
+  window.location.href = 'websiteFiles/addpost.html'
+})
+//create post button End
 
 
 // set post details with image in Database Start //
@@ -40,7 +54,6 @@ let postnowBtn = document.querySelector('#postnowBtn')
 // const storage = getStorage(app);
 
 postnowBtn?.addEventListener('click', async ()=>{
-  
     // // get image 
     // // console.log(chooseFile.files[0]);
     // const storageRef = ref(storage, chooseFile.files[0].name);  // yahan images ki jaga kuch name set kar sakte hain lekin name lazmi set karna hai.
@@ -59,7 +72,6 @@ postnowBtn?.addEventListener('click', async ()=>{
     //     })
     //      .catch((err) => console.log(err))
     //   //upload file to the storage end
-
      try {
         const docRef = await addDoc(collection(db, "allPosts"), {
           title: titleInp.value,
@@ -80,7 +92,6 @@ postnowBtn?.addEventListener('click', async ()=>{
     }, 1000);
    
      console.log('Running !');
-
 })
 // set post details with image in Database End //
 
@@ -92,7 +103,6 @@ let getBlogData = async ()=>{
   showPosts.innerHTML = ''
   snapshot.forEach((doc)=>{
     // console.log("DATA ==>",doc.id, doc.data()); 
-   
    let {title,discription,name,blogCategory} = doc.data() 
   //  console.log(`${title}`,`${discription}`,`${name}`,`${blogCategory}`);
    
