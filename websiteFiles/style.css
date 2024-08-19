@@ -238,6 +238,7 @@ body{
 }
 .abUs{
     width: 350px;
+    font-weight: 600;
 }
 .conUs h2{
     margin-bottom: 8.6%;
@@ -256,6 +257,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 22px;
+    font-weight: 600;
 }
  /* footer End */
  
