@@ -107,7 +107,7 @@ let getBlogData = async ()=>{
   //  console.log(`${title}`,`${discription}`,`${name}`,`${blogCategory}`);
    
    showPosts.innerHTML += `
-   <div class="postDiv">
+   <div class="postDiv" data-aos="fade-up">
             <div class="imgDiv">
                <img src="images/cc1.avif" alt="image">
            </div>
